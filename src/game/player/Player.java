@@ -15,6 +15,7 @@ public class Player extends GameObject {
     public int power;
     public int buff;
     public static int playerSpeed;
+    public static int countBoss =0;
 
     public Player(){
         hitBox = new BoxCollider(this, 25,25);

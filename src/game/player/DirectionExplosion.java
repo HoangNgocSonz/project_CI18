@@ -2,6 +2,7 @@ package game.player;
 
 import game.GameObject;
 
+import game.Scene.SceneBackgroundWin;
 import game.Scene.SceneGameover;
 import game.Scene.SceneManager;
 import game.enemy.Bot;
@@ -42,6 +43,12 @@ public class DirectionExplosion extends GameObject {
     public void hitEnemy() {
         Bot bot = GameObject.findIntersects(Bot.class,this);
         if (bot != null) {
+            Player.countBoss++;
+            if(Player.countBoss >=1){
+                GameObject.objects.clear();
+                SceneManager.signNewScene(new SceneBackgroundWin());
+            }
+            System.out.println(Player.countBoss);
             bot.deactive();
         }
     }

@@ -1,8 +1,12 @@
 package game.enemy;
 
 import game.GameObject;
+import game.Scene.SceneBackgroundWin;
+import game.Scene.SceneManager;
+import game.Scene.SceneStage1;
 import game.opition.Settings;
 import game.physics.BoxCollider;
+import game.player.Player;
 import game.renderer.Renderer;
 import tklibs.SpriteUtils;
 
@@ -35,7 +39,9 @@ public class Enemy extends GameObject {
 
     @Override
     public void deactive() {
+
         super.deactive();
+
         EnemyExplosion enemyExplosion = GameObject.recycle(EnemyExplosion.class);
         enemyExplosion.position.set(this.position);
     }

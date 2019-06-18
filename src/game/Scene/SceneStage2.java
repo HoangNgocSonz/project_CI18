@@ -1,4 +1,5 @@
 package game.Scene;
+
 import game.GameObject;
 import game.enemy.Bot1;
 import game.enemy.Bot2;
@@ -10,11 +11,11 @@ import game.player.item.ItemPower;
 import game.player.item.ItemSpeed;
 import game.player.item.ItemSuper;
 
-public class SceneStage1 extends Scene {
-    public static int x =1;
+public class SceneStage2 extends Scene {
+    public static int x =2;
     @Override
     public void init() {
-        Map map = Map.load("assets/images/stage/map4.json");
+        Map map = Map.load("assets/images/stage/Map2.json");
         map.generate();
         GameObject.recycle(Player.class);
         GameObject.recycle(Bot1.class);
